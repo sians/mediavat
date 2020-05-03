@@ -1,0 +1,24 @@
+<div class="add-post">
+  <button><%= link_to 'New Post', new_admin_post_path %></button>
+</div>
+
+<div class="posts">
+  <% @posts.each do |post| %>
+
+    <div class="post-card">
+      <div class="published-check">
+
+      </div>
+      <div class="content">
+        <div class="post-details">
+          <h4><%= post.title %></h4>
+          <small>by <%= post.author %>, last updated <%= post.updated_at.strftime('%d %b, %Y') %></small>
+        </div>
+        <div class="buttons">
+
+        </div>
+      </div>
+    </div>
+
+  <% end %>
+</div>

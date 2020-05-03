@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mediavat</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+    <% if notice.present? %>
+      <p class="notice"><%= notice %></p>
+    <% elsif alert.present? %>
+      <p class="alert"><%= alert %></p>
+    <% end %>
+
+    <% if params[:controller][0...6] == 'admin/' %>
+      <div class="admin-page">
+        <%= render 'shared/admin_nav' %>
+        <%= yield %>
+      </div>
+    <% elsif params[:controller] == 'devise/sessions' %>
+      <%= yield %>
+    <% else %>
+      <%= render 'shared/nav' %>
+      <%= yield %>
+
+    <% end %>
+
+  </body>
+</html>

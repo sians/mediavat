@@ -1,0 +1,22 @@
+@import "./actiontext.scss";
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@900&family=Raleway:ital,wght@0,100;0,300;0,900;1,100;1,300;1,900&family=Rozha+One&display=swap');
+
+
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+@import "config/fonts";
+
+@import "global";
+
+@import "components/nav";
+@import "components/admin_nav";
+
+@import "pages/home";
+@import "pages/login";
+@import "pages/dashboard";
+@import "pages/contact";
+@import "pages/archive";
+
+@import "admin/posts/post_form";

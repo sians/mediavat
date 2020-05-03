@@ -1,0 +1,43 @@
+<div class="archive-page">
+  <div class="archive-content">
+    <% @posts[0...5].each do |post| %>
+      <div class="post-content">
+        <h2><%= post.title %></h2>
+        <p><%= post.subtitle %></p>
+        <p>by <%= post.author %></p>
+        <p><%= post.date_published ? post.date_published.strftime('%d %b, %Y') : post.created_at.strftime('%d %b, %Y') %></p>
+        <p><%= post.content %></p>
+      </div>
+    <% end %>
+  </div>
+  <div class="by-month">
+    <div class="recent-posts-container">
+      <h4>Recent Posts</h4>
+      <div class="recent-posts">
+        <% @posts.each do |post| %>
+          <p>
+            <%= link_to post_path(post) do %>
+              <%= post.title %>
+            <% end %>
+          </p>
+        <% end %>
+      </div>
+    </div>
+    <div class="archives-container">
+      <h4>Archives</h4>
+      <div class="archives">
+
+      </div>
+    </div>
+    <div class="categories-container">
+      <h4>Categories</h4>
+      <div class="categories">
+        <% @categories.each do |category| %>
+          <p><%= category.name %></p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+</div>
+

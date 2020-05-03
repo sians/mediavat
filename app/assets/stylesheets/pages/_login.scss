@@ -1,0 +1,59 @@
+.page-container {
+  display: flex;
+  .form-container {
+
+    margin-top:100px;
+    h1 {
+      font-size: 50px;
+      // font-family: 'Cinzel', serif;
+      font-family: 'Rozha One', serif;
+      font-weight: 100;
+      margin-top: -10px;
+    }
+    .form {
+      width: 360px;
+      margin-top: 15px;
+      .login-form-inputs {
+        margin-bottom: 50px;
+        .login-input-field {
+
+          input {
+            width: 300px;
+            padding: 10px 5px;
+            outline: none;
+            border-radius: 4px;
+            border: none;
+            border-bottom: 2px solid;
+            margin-bottom: 15px;
+          }
+          input[type="checkbox"] {
+            width: 20px;
+            margin-top: 10px;
+          }
+          label {
+            font-size:12px;
+          }
+        }
+      }
+    }
+    #form-cta {
+      margin-top: 10px;
+      a {
+        font-size: 12px;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+    }
+  }
+
+  .image-container {
+    background-image: url("https://images.unsplash.com/photo-1578593139775-971441c3c518?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2136&q=80");
+    height: calc(100vh - 50px);
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+  }
+}
+

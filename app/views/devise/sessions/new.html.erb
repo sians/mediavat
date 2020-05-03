@@ -1,0 +1,46 @@
+<div class="page-container">
+  <div class="form-container">
+    <h1>The Media Vat</h1>
+    <div class="form">
+      <!-- <h2>Log in</h2> -->
+      <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+        <div class="login-form-inputs">
+          <div class="login-input-field">
+            <%= f.input :email,
+                        label: false,
+                        placeholder: "Email",
+                        required: false,
+                        autofocus: true,
+                        input_html: { autocomplete: "off" }
+                        %>
+          </div>
+          <div class="login-input-field">
+            <%= f.input :password,
+                        label: false,
+                        placeholder: "Password",
+                        required: false,
+                        input_html: { autocomplete: "off" },
+                        autocomplete: false %>
+          </div>
+          <div class="login-input-field">
+            <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+          </div>
+        </div>
+
+        <div id="form-cta">
+          <%= f.button :submit, "Log in", class: "btn btn-ninetwenty" %>
+        </div>
+      <% end %>
+
+      <div id="form-cta">
+        <%= render "devise/shared/links" %>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="image-container">
+  </div>
+
+</div>
