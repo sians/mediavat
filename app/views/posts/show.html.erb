@@ -1,1 +1,23 @@
-<%= @post.title %>
+<div class="post-content">
+  <%= @post.title %>
+</div>
+
+<div class="comment-section">
+  <h3>Comments</h3>
+  <% if current_user %>
+    <!-- comment form -->
+    <%= render 'comment_form' %>
+
+  <% else %>
+    <p>Sign in to leave a message.</p>
+  <% end %>
+
+  <% if @post.comments.size.positive? %>
+    <% @post.comments.each do |comment| %>
+      <p><%= comment.text %></p>
+      <small>by <%= comment.name %></small>
+    <% end %>
+  <% else %>
+    <p>There are no comments yet!</p>
+  <% end %>
+</div>

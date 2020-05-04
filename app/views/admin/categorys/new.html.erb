@@ -1,0 +1,24 @@
+<div class="admin-categories-container">
+  <h3>Add a New Category</h3>
+
+  <%= simple_form_for([:admin, @category], url: admin_categorys_path, method: :post)  do |f| %>
+
+    <div class="form-group">
+      <%= f.input :name,
+      validate: { presence: true },
+      :label => 'Category name:' %>
+    </div>
+
+
+    <div class="form-submit">
+      <%= link_to "Cancel", admin_path, class: 'btn-cancel' %>
+      <% if params[:action] == 'new' %>
+        <%= f.button :submit, "Create", class: 'btn-mediav' %>
+      <% else %>
+        <%= f.button :submit, "Edit", class: 'btn-mediav' %>
+      <% end %>
+    </div>
+
+  <% end %>
+
+</div>

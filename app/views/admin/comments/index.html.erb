@@ -1,0 +1,10 @@
+<div class="comments">
+  <% if @comments.present? %>
+    <% @comments.reverse.each do |comment| %>
+      <p><%= comment.text %></p>
+      <small>by <%= comment.name %></small>
+    <% end %>
+  <% else %>
+  <% end %>
+
+</div>

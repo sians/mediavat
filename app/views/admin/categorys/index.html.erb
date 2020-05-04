@@ -1,0 +1,12 @@
+<div class="add-category">
+  <button><%= link_to 'Add Category', new_admin_category_path %></button>
+</div>
+<div class="categorys">
+  <% if @categories.present? %>
+    <% @categories.each do |category| %>
+      <p><%= category.name %></p>
+    <% end %>
+  <% else %>
+    <p>There are no categories yet.</p>
+  <% end %>
+</div>

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'comments/new'
+  get 'comments/create'
   get 'posts/index'
   devise_for :users
   root to: 'pages#home'
@@ -14,5 +16,7 @@ Rails.application.routes.draw do
     get '', to: 'dashboard#index', as: '/'
 
     resources :posts
+    resources :categorys, only:  [:index, :new, :create]
+    resources :comments, only: [:index, :show]
   end
 end

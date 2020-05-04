@@ -1,0 +1,20 @@
+<div class="comment-form-container">
+
+  <%= simple_form_for @comment, url: post_comments_path(@post, @comment) do |f| %>
+
+    <div class="form-group">
+      <%= f.input :text,
+      label: false,
+      validate: { presence: true }
+      %>
+    </div>
+
+
+    <div class="form-submit">
+      <%= f.button :submit, "Submit", class: 'btn-mediav' %>
+
+    </div>
+
+  <% end %>
+
+</div>
