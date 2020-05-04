@@ -1,15 +1,37 @@
+$mediav: #1419e2;
+$red: #FF2E2E;
+$bg: #f9f9f9;
+
 body {
-  margin: 25px;
-  font-family: 'Raleway', sans-serif;;
+  margin: 0px;
+  background-color: $bg;
+  font-family: 'Raleway', sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6, p {
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Rozha One', serif;
+  margin: 0px;
+}
+
+h2 {
+  line-height: 25px;
+}
+
+p {
   margin: 0px;
 }
 
 a {
   color: black;
   text-decoration: none;
+  // &:hover {
+  //   color: $mediav;
+  // }
+  // &:hover {
+  //   color: black;
+  //   text-decoration: underline;
+  //   text-decoration-color: $mediav;
+  // }
 }
 
 ul {
@@ -19,6 +41,12 @@ ul {
     list-style: none;
     margin: 0px;
   }
+}
+
+.page-container {
+  padding: 0px 25px;
+  margin: 25px auto;
+  max-width: 1000px;
 }
 
 .alert {
@@ -34,3 +62,5 @@ ul {
 .notice {
   display: none;
 }
+
+

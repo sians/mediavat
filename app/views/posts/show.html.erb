@@ -1,23 +1,25 @@
-<div class="post-content">
-  <%= @post.title %>
-</div>
+<div class="post-detail-page">
+  <div class="post-content">
+    <small>by <%= @post.author %></small>
 
-<div class="comment-section">
-  <h3>Comments</h3>
-  <% if current_user %>
-    <!-- comment form -->
-    <%= render 'comment_form' %>
+    <h2><%= @post.title %></h2>
+    <h3><%= @post.subtitle %></h3>
+    <p><%= @post.post_content %></p>
+  </div>
 
-  <% else %>
-    <p>Sign in to leave a message.</p>
-  <% end %>
 
-  <% if @post.comments.size.positive? %>
-    <% @post.comments.each do |comment| %>
-      <p><%= comment.text %></p>
-      <small>by <%= comment.name %></small>
+  <div class="comment-section">
+    <h3>Comments</h3>
+    <div class="comment-bar">
+      <span>Sort by Most Recent</span>
+    </div>
+
+    <% if current_user %>
+      <%= render 'comment_form' %>
+    <% else %>
+      <p>Sign in to leave a message.</p>
     <% end %>
-  <% else %>
-    <p>There are no comments yet!</p>
-  <% end %>
+
+    <%= render 'comment_section' %>
+  </div>
 </div>

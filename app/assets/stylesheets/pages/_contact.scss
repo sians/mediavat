@@ -43,7 +43,7 @@
           background-color: black;
           margin-right: 10px;
           &:hover {
-            background-color: #8FE2FF;
+            background-color: $mediav;
             cursor: pointer;
           }
         }
@@ -56,7 +56,7 @@
           span {
             font-weight: bold;
             &:hover {
-              color: #8FE2FF;
+              color: $mediav;
               cursor: pointer;
             }
           }

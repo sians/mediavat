@@ -1,0 +1,8 @@
+const commentForm = document.querySelector('.comment-form');
+commentForm.innerHTML = "<%= j render 'posts/comment_form', comment: Comment.new%>";
+const textarea = document.querySelector('textarea#comment_text');
+console.log(textarea)
+textarea.value = "";
+
+const comments = document.querySelector('#comments');
+comments.innerHTML = "<%= j render 'posts/comment_section', comments: @post.comments%>";

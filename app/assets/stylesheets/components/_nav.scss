@@ -9,7 +9,7 @@ nav {
 
 .nav-header {
   text-align: center;
-  padding: 30px;
+  padding: 20px;
   h1 {
     font-size: 50px;
     // font-family: 'Cinzel', serif;
@@ -27,13 +27,7 @@ nav {
 .navbar {
   display: flex;
   justify-content: center;
-  padding: 15px;
-
-  // border-top: 5px double rgba(41,152,204,.5);
-  // border-bottom: 5px double rgba(41,152,204,.5);
-
-  // border-top: 2px solid rgba(41,152,204,.5);
-  // border-bottom: 2px solid rgba(41,152,204,.5);
+  // padding: 15px;
 
   border-top: 3px solid rgba(0,0,0,1);
   border-bottom: 1px solid rgba(0,0,0,0.2);
@@ -55,6 +49,16 @@ nav {
       letter-spacing: 2px;
       &:not(:first-child) {
         padding-left: 40px;
+      }
+      a {
+        display: inline-block;
+        padding: 15px 0px 13px;
+        border-bottom: 2px solid transparent;
+        &:hover {
+          border-bottom: 2px solid $mediav;
+          color: $mediav;
+          // text-transform: none;
+        }
       }
     }
   }

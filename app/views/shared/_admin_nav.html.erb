@@ -1,30 +1,32 @@
 <div class="admin-nav">
-  <div>
-    <!-- <h1>The Media Vat</h1> -->
-    <h1>Admin</h1>
-    <!-- <h6>ADMIN</h6> -->
+  <div class="nav-content">
+    <div>
+      <!-- <h1>The Media Vat</h1> -->
+      <h1>Admin</h1>
+      <!-- <h6>ADMIN</h6> -->
+    </div>
+
+    <ul>
+      <li>
+        <!-- <i class="fas fa-thumbtack"></i> -->
+        <%= link_to 'Posts', admin_posts_path %>
+      </li>
+
+      <li>
+        <!-- <i class="fas fa-tags"></i> -->
+        <%= link_to 'Categories', admin_categorys_path %>
+      </li>
+
+      <li>
+        <!-- <i class="fas fa-comments"></i> -->
+        <%= link_to 'Comments', admin_comments_path %>
+      </li>
+
+      <li>
+        <!-- <i class="fas fa-sign-out-alt"></i> -->
+        <%= link_to 'Log Out', destroy_user_session_path, method: :delete  %>
+      </li>
+    </ul>
   </div>
-
-  <ul>
-    <li>
-      <!-- <i class="fas fa-thumbtack"></i> -->
-      <%= link_to 'Posts', admin_posts_path %>
-    </li>
-
-    <li>
-      <!-- <i class="fas fa-tags"></i> -->
-      <%= link_to 'Categories', admin_categorys_path %>
-    </li>
-
-    <li>
-      <!-- <i class="fas fa-comments"></i> -->
-      <%= link_to 'Comments', admin_comments_path %>
-    </li>
-
-    <li>
-      <!-- <i class="fas fa-sign-out-alt"></i> -->
-      <%= link_to 'Log Out', destroy_user_session_path, method: :delete  %>
-    </li>
-  </ul>
 </div>
 

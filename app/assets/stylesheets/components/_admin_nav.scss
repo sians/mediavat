@@ -20,24 +20,29 @@
 
 .admin-page {
   .admin-nav {
-    width: calc(100% - 50px);
     height: 60px;
     background-color: black;
     color: white;
     padding: 5px 20px;
-    display: flex;
-    justify-content: space-between;
     align-items: center;
-    ul {
+    display:flex;
+    .nav-content {
+      max-width:1000px;
+      margin: 0px auto;
       display: flex;
-      li {
-        margin-left: 30px;
-        font-size: 12px;
-        a {
-          color: white;
-        }
-        i {
-          width: 30px;
+      justify-content: space-between;
+      align-items: center;
+      ul {
+        display: flex;
+        li {
+          margin-left: 30px;
+          font-size: 12px;
+          a {
+            color: white;
+          }
+          i {
+            width: 30px;
+          }
         }
       }
     }

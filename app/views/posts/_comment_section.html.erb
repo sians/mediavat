@@ -1,0 +1,15 @@
+<div id="comments">
+  <% if @post.comments.size.positive? %>
+    <% @post.comments.reverse.each do |comment| %>
+      <div class="comment">
+        <small>
+          <span class="name"><%= comment.name %></span>
+          <span class="date"><%= comment.created_at.strftime('%d %b, %Y') %></span>
+        </small>
+        <p><%= comment.text %></p>
+      </div>
+    <% end %>
+  <% else %>
+    <p>There are no comments yet!</p>
+  <% end %>
+</div>

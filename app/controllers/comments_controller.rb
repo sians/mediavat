@@ -11,11 +11,12 @@ class CommentsController < ApplicationController
       post_id: params[:post_id])
     @comment = Comment.new(comment_attrs)
     authorize @comment
+    @comment.save
 
-    if @comment.save
-      redirect_to post_path(params[:post_id])
-    else
-      render 'comments/new'
+    @post = Post.find(params[:post_id])
+
+    respond_to do |format|
+      format.js
     end
   end
 

@@ -1,12 +1,19 @@
 <div class="archive-page">
   <div class="archive-content">
-    <% @posts[0...5].each do |post| %>
+    <% @posts.reverse[0...5].each do |post| %>
       <div class="post-content">
-        <h2><%= post.title %></h2>
-        <p><%= post.subtitle %></p>
-        <p>by <%= post.author %></p>
-        <p><%= post.date_published ? post.date_published.strftime('%d %b, %Y') : post.created_at.strftime('%d %b, %Y') %></p>
-        <p><%= post.content %></p>
+        <div class="details">
+          <small>by <%= post.author %></small>
+          <small><%= post.date_published ? post.date_published.strftime('%d %b, %Y') : post.created_at.strftime('%d %b, %Y') %></small>
+        </div>
+
+        <h2>
+          <%= link_to post_path(post) do %>
+            <%= post.title %>
+          <% end %>
+        </h2>
+        <p class="blurb"><%= truncate(strip_tags(post.post_content.to_s), length: 250) %></p>
+
       </div>
     <% end %>
   </div>
@@ -14,7 +21,7 @@
     <div class="recent-posts-container">
       <h4>Recent Posts</h4>
       <div class="recent-posts">
-        <% @posts.each do |post| %>
+        <% @posts.reverse.each do |post| %>
           <p>
             <%= link_to post_path(post) do %>
               <%= post.title %>

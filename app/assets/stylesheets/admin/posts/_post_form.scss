@@ -1,17 +1,37 @@
 .admin-posts-container {
   max-width: 640px;
-  margin: 30px auto;
+  margin: 30px auto 100px;
   h3 {
-    margin-bottom: 30px;
+    font-size: 30px;
+    margin-bottom: 20px;
   }
   form {
     div.input {
       margin-bottom: 15px;
       display: flex;
       flex-direction: column;
+      input {
+        padding: 5px;
+        border-radius: 5px;
+        border: 1px solid rgba(0,0,0,0.2);
+      }
+    }
+    // div.input.datetime {
+    //   select {
+    //     width: 150px;
+
+    //   }
+    // }
+    select {
+      width: 150px;
     }
     label {
       font-size: 12px;
+    }
+    .form-submit {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
     }
   }
 }

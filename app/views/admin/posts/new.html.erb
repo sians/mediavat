@@ -42,11 +42,11 @@
 
 
     <div class="form-submit">
-      <%= link_to "Cancel", admin_path, class: 'btn-cancel' %>
+      <%= link_to "Cancel", admin_path, class: 'btn-cancel btn' %>
       <% if params[:action] == 'new' %>
-        <%= f.button :submit, "Create", class: 'btn-mediav' %>
+        <%= f.button :submit, "Create", class: 'btn-mediav btn' %>
       <% else %>
-        <%= f.button :submit, "Edit", class: 'btn-mediav' %>
+        <%= f.button :submit, "Edit", class: 'btn-mediav btn' %>
       <% end %>
     </div>
 

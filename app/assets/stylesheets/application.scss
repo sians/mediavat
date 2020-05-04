@@ -12,6 +12,7 @@
 
 @import "components/nav";
 @import "components/admin_nav";
+@import "components/buttons";
 
 @import "pages/home";
 @import "pages/login";
@@ -22,3 +23,4 @@
 @import "posts/show";
 
 @import "admin/posts/post_form";
+@import "admin/posts/trix";
