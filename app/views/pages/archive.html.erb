@@ -1,10 +1,10 @@
 <div class="archive-page">
   <div class="archive-content">
-    <% @posts.reverse[0...5].each do |post| %>
+    <% @posts[0...5].each do |post| %>
       <div class="post-content">
         <div class="details">
           <small>by <%= post.author %></small>
-          <small><%= post.date_published ? post.date_published.strftime('%d %b, %Y') : post.created_at.strftime('%d %b, %Y') %></small>
+          <small><%= post.published? ? post.date_published.strftime('%d %b, %Y') : post.created_at.strftime('%d %b, %Y') %></small>
         </div>
 
         <h2>

@@ -13,6 +13,14 @@ class PostPolicy < ApplicationPolicy
     true
   end
 
+  def edit?
+    true
+  end
+
+  def update?
+    true
+  end
+
   def new?
     true
   end

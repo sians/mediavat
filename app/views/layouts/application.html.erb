@@ -20,9 +20,7 @@
     <% if params[:controller][0...6] == 'admin/' %>
       <div class="admin-page">
         <%= render 'shared/admin_nav' %>
-        <div class="page-container">
-          <%= yield %>
-        </div>
+        <%= yield %>
       </div>
     <% elsif params[:controller] == 'devise/sessions' %>
       <%= yield %>

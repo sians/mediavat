@@ -1,24 +1,51 @@
-<div class="add-post">
-  <button><%= link_to 'New Post', new_admin_post_path %></button>
-</div>
-
-<div class="posts">
-  <% @posts.reverse.each do |post| %>
-
-    <div class="post-card">
-      <div class="published-check">
-
-      </div>
-      <div class="content">
-        <div class="post-details">
-          <h4><%= post.title %></h4>
-          <small>by <%= post.author %>, last updated <%= post.updated_at.strftime('%d %b, %Y') %></small>
-        </div>
-        <div class="buttons">
-
-        </div>
-      </div>
+<div class="highbar">
+  <div class="inner">
+    <div class="filters">
+      <span class="btn btn-mediav">sort by</span>
+      <span class="btn btn-mediav">filters</span>
     </div>
-
-  <% end %>
+    <div class="add-post">
+      <%= link_to 'New Post', new_admin_post_path, class:  'btn-mediav-solid btn' %>
+    </div>
+  </div>
 </div>
+
+<div class="page-container">
+  <h2>All Posts</h2>
+  <div class="posts">
+    <% @posts.each do |post| %>
+
+      <div class="card post-card">
+        <div class="published-check <%= post.published %>"></div>
+
+        <div class="content">
+          <div class="post-details">
+            <h4><%= link_to post.title, post_path(post) %></h4>
+            <div class="post-tags">
+              <% if post.categorys %>
+                <% post.categorys.each do |category| %>
+                  <span class="tag"><%= category.name %></span>
+                <% end %>
+              <% end %>
+            </div>
+            <small>by <%= post.author %>, last updated <%= post.updated_at.strftime('%d %b, %Y') %></small>
+          </div>
+          <div class="buttons">
+            <!-- E D I T -->
+            <%= link_to edit_admin_post_path(post), class: 'btn-round' do %>
+              <i class="fas fa-pencil-alt"></i>
+            <% end %>
+
+            <!-- D E L E T E -->
+            <%= link_to edit_admin_post_path(post), class: 'btn-round' do %>
+              <i class="fas fa-trash-alt"></i>
+            <% end %>
+
+          </div>
+        </div>
+      </div>
+
+    <% end %>
+  </div>
+</div>
+

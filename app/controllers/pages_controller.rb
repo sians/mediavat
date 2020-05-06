@@ -8,7 +8,7 @@ class PagesController < ApplicationController
   end
 
   def archive
-    @posts = Post.all
+    @posts = Post.published.order(date_published: :desc)
     @categories = Category.all
 
 

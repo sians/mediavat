@@ -1,0 +1,47 @@
+.admin-page {
+  .highbar {
+    width: 100%;
+    height: 70px;
+    background-color:  white;
+    // background-color: $mediav;
+    display:  flex;
+    align-items: center;
+-webkit-box-shadow: 0px 5px 15px 0px rgba(156,156,156,0.14);
+    -moz-box-shadow: 0px 5px 15px 0px rgba(156,156,156,0.14);
+    box-shadow: 0px 5px 15px 0px rgba(156,156,156,0.14);
+    .inner {
+      width: 1000px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0px auto;
+      .filters {
+        // width:  150px;
+        display: flex;
+        .btn {
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+  .page-container {
+    h2 {
+      font-size: 30px;
+      font-family: 'Raleway', sans-serif;
+      text-transform: uppercase;
+      text-align: center;
+      padding: 30px 0px;
+    }
+
+    .posts {
+      margin-top: 30px;
+      a {
+        &:hover {
+          color: black;
+          text-decoration: underline;
+          text-decoration-color: $mediav;
+        }
+      }
+    }
+  }
+}

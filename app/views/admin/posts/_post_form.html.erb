@@ -1,0 +1,50 @@
+  <%= simple_form_for([:admin, @post]) do |f| %>
+
+    <div class="form-group">
+      <%= f.input :title,
+      validate: { presence: true },
+      :label => 'Title of Post:' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.input :subtitle,
+      :label => 'Subtitle:' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.input :author,
+      :label => 'Author:' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.rich_text_area :post_content %>
+    </div>
+
+    <div class="form-group">
+      <%= f.input :date_published,
+      :label => 'Date published:' %>
+    </div>
+
+    <div class="form-group select-input">
+      <%= f.input :published,
+      collection: Post.publisheds.map{|p| p[0]}
+      %>
+    </div>
+
+    <div class="form-group select-input">
+      <%= f.association :categorys,
+      :collection => Category.all.map{|c|[c.name, c.id]},
+      :input_html => {multiple: true} %>
+    </div>
+
+
+    <div class="form-submit">
+      <%= link_to "Cancel", admin_posts_path, class: 'btn-cancel btn' %>
+      <% if params[:action] == 'new' %>
+        <%= f.button :submit, "Create", class: 'btn-mediav btn' %>
+      <% else %>
+        <%= f.button :submit, "Edit", class: 'btn-mediav btn' %>
+      <% end %>
+    </div>
+
+  <% end %>

@@ -1,12 +1,29 @@
-<div class="add-category">
-  <button><%= link_to 'Add Category', new_admin_category_path %></button>
+<div class="highbar">
+  <div class="inner">
+    <div class="filters">
+      <span class="btn btn-mediav">sort by</span>
+    </div>
+    <div class="add-category">
+      <%= link_to 'New Category', new_admin_category_path, class:  'btn-mediav-solid btn' %>
+    </div>
+  </div>
 </div>
-<div class="categorys">
-  <% if @categories.present? %>
-    <% @categories.each do |category| %>
-      <p><%= category.name %></p>
+
+<div class="page-container">
+  <h2>All categorys</h2>
+
+  <div class="categorys">
+    <% if @categories.present? %>
+      <% @categories.each do |category| %>
+        <p><%= category.name %></p>
+      <% end %>
+    <% else %>
+      <p>There are no categories yet.</p>
     <% end %>
-  <% else %>
-    <p>There are no categories yet.</p>
-  <% end %>
+  </div>
+
 </div>
+
+
+
+

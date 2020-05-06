@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    get '', to: 'dashboard#index', as: '/'
+    get '', to: 'posts#index', as: '/'
 
     resources :posts
     resources :categorys, only:  [:index, :new, :create]

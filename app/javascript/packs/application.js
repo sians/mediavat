@@ -19,3 +19,9 @@ require("@rails/actiontext")
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+
+import { postCardHover } from '../components/admin_post_card';
+
+window.addEventListener("load", function() {
+  postCardHover();
+})

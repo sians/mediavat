@@ -3,7 +3,7 @@ class Admin::PostsController < ApplicationController
   before_action :get_post, only: %i[edit update destroy]
 
   def index
-    @posts = policy_scope(Post).order(updated_at: :asc)
+    @posts = policy_scope(Post).order(created_at: :desc)
   end
 
   def new
@@ -51,7 +51,7 @@ class Admin::PostsController < ApplicationController
       :author,
       :published,
       :date_published,
-      { :categorys => [] }
+      { :category_ids => [] }
       )
   end
 end
